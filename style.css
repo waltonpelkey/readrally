@@ -173,6 +173,8 @@ body li {
     justify-content: center;
     align-items: center;
     border-radius: 1vh;
+    pointer-events: none;
+
 }
 
 .empty-box {
@@ -204,6 +206,7 @@ body li {
     justify-content: center;
     align-items: center;
     border-radius: 1vh;
+    box-shadow: none;
 }
 
 .rectangle {
@@ -288,6 +291,13 @@ footer {
 
 /* Dice formatting */
 .dice-container {
+    display: flex;
+    position: absolute;
+    top: 50vh;
+    left: 83vw;
+}
+
+.dice-container-one {
     display: flex;
     position: absolute;
     top: 50vh;
@@ -392,4 +402,9 @@ button.back {
 
 button {
     cursor: pointer;
+}
+
+.glow {
+    box-shadow: 0 0 10px 5px #FFD700;
+    pointer-events: auto;
 }
