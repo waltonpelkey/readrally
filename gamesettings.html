@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+
+    <header>
+        <nav>
+
+            <ul>
+                <li>
+                    <div class="logo"> &#128214;Read Rally&#128214;</div>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <button>Menu</button>
+                        <div class="content">
+                            <a href="login.html">Logout</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        </div>
+    </header>
+    <center>
+        <h3>Game Settings</h3>
+        <center>
+        <table>
+            <tr>
+                <td>Number of Prompts on Board:</td>
+                <td>
+                    <select name="numberOfPrompts">
+                        <option value="15" onclick="expectedNum()">15</option>
+                        <option value="29" onclick="expectedNum()">29</option>
+                        <option value="47" onclick="expectedNum()">47</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Number of Dice:</td>
+                <td>
+                    <select name="numberOfDice">
+                        <option value="1" onclick="expectedNum()">1</option>
+                        <option value="2" onclick="expectedNum()">2</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">Expected Number of Prompts: <span id="expectedPrompts"></span></td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="gamesettingsbutton" onclick="saveSettings()">Save Settings</button>
+                </td>
+            </tr>
+        </table>
+        </center>
+    </center>
+
+    <script>
+        function saveSettings() {
+            window.location.href = "startpage-" + document.getElementsByName("numberOfDice")[0].value + "-" + document.getElementsByName("numberOfPrompts")[0].value + ".html";
+        }
+
+        function expectedNum() {
+            const expectedNumFloor = Math.floor(document.getElementsByName("numberOfPrompts")[0].value / ((document.getElementsByName("numberOfDice")[0].value * 4) - 0.5));
+            const expectedNumCeiling = expectedNumFloor + 1;
+
+            document.getElementById('expectedPrompts').innerText = `${expectedNumFloor} to ${expectedNumCeiling}`;
+        }
+
+        expectedNum();
+
+    </script>
+</body>
+</body>
+<footer>CS3041: Human-Computer Interaction</footer>
+
+</html>

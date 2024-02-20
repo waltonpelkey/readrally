@@ -1,0 +1,406 @@
+/* This is so that I can use the Bookerly font that I downloaded */
+@font-face {
+    font-family: 'Bookerly';
+    src: url('bookerly\Bookerly Bold Italic.ttf') format('truetype'),
+        url('bookerly\Bookerly Bold.ttf') format('truetype'),
+        url('bookerly\Bookerly Display Bold Italic.ttf') format('truetype'),
+        url('bookerly\Bookerly Display Bold.ttf') format('truetype'),
+        url('bookerly\Bookerly Display Italic.ttf') format('truetype'),
+        url('bookerly\Bookerly Display.ttf') format('truetype'),
+        url('bookerly\Bookerly Italic.ttf') format('truetype'),
+        url('bookerly\Bookerly LCD Italic.ttf') format('truetype'),
+        url('bookerly\Bookerly LCD Light Italic.ttf') format('truetype'),
+        url('bookerly\Bookerly Light Italic.ttf') format('truetype'),
+        url('bookerly\Bookerly Light.ttf') format('truetype'),
+        url('bookerly\Bookerly.ttf') format('truetype');
+    /* Other font properties like font-weight and font-style can be defined here */
+}
+
+/* Formatting for the header */
+header {
+    background: #82a378;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 10%;
+}
+
+header::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+nav {
+    padding-right: 10px;
+    float: right;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+    margin-left: 10px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+/*footer {
+    
+}*/
+.logo {
+    margin: 0;
+    padding-top: 8px;
+    padding-bottom: 25px;
+    font-family: 'Bookerly Bold';
+    font-size: 50px;
+    color: white;
+    position: absolute;
+    left: 20px;
+    top: 0;
+}
+
+.dropdown {
+    display: inline-block;
+}
+
+.dropdown button {
+    background-color: white;
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 200px;
+    text-align: left;
+    font-family: 'Bookerly Bold';
+    font-size: larger;
+}
+
+.dropdown a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding: 10px 15px;
+    text-align: left;
+    font-family: 'Bookerly Bold';
+    font-size: larger;
+}
+
+.dropdown .content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 100px;
+    box-shadow: 2px 2px 5px black;
+    border-radius: 5px;
+    width: 200px;
+}
+
+.dropdown:hover .content {
+    display: block;
+}
+
+.dropdown:hover button {
+    background-color: whitesmoke;
+    border-radius: 5px;
+    width: 200px;
+}
+
+.dropdown a:hover {
+    background-color: whitesmoke;
+    border-radius: 5px;
+}
+
+body {
+    background-color: #c9e5cd;
+    margin: 0;
+    padding-top: 100px;
+    font-family: 'Bookerly Bold';
+}
+
+body ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body li {
+    display: inline-block;
+    margin-left: 10px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: 80px 80px 80px 80px 80px 80px 80px 80px 80px;
+    grid-template-rows: 80px 80px 80px 80px 80px 80px 80px 80px 80px;
+    justify-content: center;
+    align-content: center;
+    grid-gap: 2px;
+    margin-left: 475px;
+    position: absolute;
+    top: 120px;
+    left: 0;
+}
+
+.game-board-7 {
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px 100px 100px 100px 100px;
+    justify-content: center;
+    align-content: center;
+    grid-gap: 2px;
+    margin-left: 475px;
+    position: absolute;
+    top: 120px;
+    left: 0;
+}
+
+.game-board-5 {
+    display: grid;
+    grid-template-columns: 144px 144px 144px 144px 144px;
+    grid-template-rows: 144px 144px 144px 144px 144px;
+    justify-content: center;
+    align-content: center;
+    grid-gap: 2px;
+    margin-left: 475px;
+    position: absolute;
+    top: 120px;
+    left: 0;
+}
+
+.box {
+    background-color: #d9d9d9;
+    border: 2px solid white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.empty-box {
+    background-color: transparent;
+    border: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.start-box {
+    background-color: #caffbf;
+    border: 2px solid white;
+    color: rgb(0, 85, 0);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.end-box {
+    background-color: #ffc7ff;
+    border: 2px solid white;
+    color: #ad4fad;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.rectangle {
+    width: 300px;
+    height: 50px;
+    line-height: 100px;
+    margin-left: 75px;
+    background-color: #d9d9d9;
+    border: 2px solid white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    text-decoration: none;
+    color: black;
+}
+
+
+/* other stuff */
+.prompt-header {
+    text-align: center;
+    font-size: 300%;
+    color: rgb(11, 70, 14);
+}
+
+.prompt-description {
+    align-items: center;
+    text-align: center;
+    font-size: 200%;
+    color: rgb(11, 70, 14);
+}
+
+.recommendation-container {
+    display: flex;
+    justify-content: center;
+}
+
+.recommendation-box {
+    flex: 1;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+    max-width: 250px;
+    height: 375px;
+}
+
+.recommendation-box h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+footer {
+    position: absolute;
+    left: 82.5%;
+    top: 95%;
+}
+
+.gamemode-selection {
+    display: flex;
+}
+
+.gamemode-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+    height: 650px;
+    font-size: xx-large;
+    border-radius: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+/* Dice formatting */
+.dice-container {
+    display: flex;
+    position: absolute;
+    top: 50vh;
+    left: 83vw;
+}
+
+.dice {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    margin: 5px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    background-color: white;
+}
+
+.dice-dot {
+    --top: 0% --left: 0%;
+
+    width: 15px;
+    height: 15px;
+    background-color: black;
+    border-radius: 50%;
+
+    /* Dot Positioning */
+    position: absolute;
+    top: var(--top);
+    left: var(--left);
+    transform: translateX(calc(var(--left) * -1)) translateY(calc(var(--top) * -1));
+}
+
+.btn-roll-dice {
+    margin-top: 10px;
+    position: absolute;
+    top: 60vh;
+    left: 83.75vw;
+    font-family: 'Bookerly Bold';
+}
+
+h3 {
+    margin-top: 10px;
+    color: black;
+    font-size: xx-large;
+}
+
+table {
+    width: 70%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+td {
+    padding: 10px;
+    border: transparent;
+    font-size: x-large;
+}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    color: #333;
+    border: transparent;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.gamesettingsbutton {
+    width: 20%;
+    height: 100%;
+}
+
+button.quitgame {
+    width: 200px;
+    height: 50px;
+    background-color: white;
+    color: black;
+    font-family: 'Bookerly Bold';
+    position: absolute;
+    right: 16px;
+    bottom: 50px;
+    cursor: pointer;
+}
+
+button.back {
+    width: 200px;
+    height: 50px;
+    background-color: white;
+    color: black;
+    font-family: 'Bookerly Bold';
+    position: absolute;
+    left: 16px;
+    top: 100px;
+    cursor: pointer;
+    font-size: large;
+}
+
+button {
+    cursor: pointer;
+}

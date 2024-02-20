@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+
+    <header>
+        <nav>
+
+            <ul>
+                <li>
+                    <div class="logo"> &#128214;Read Rally&#128214;</div>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <button>Customize</button>
+                        <div class="content">
+                            <a href="gamesettings.html">Game Settings</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <button>Menu</button>
+                        <div class="content">
+                            <a href="login.html">Logout</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        </div>
+    </header>
+
+    <div class="gamemode-selection">
+        <a href="index-2-47.html" class="gamemode-box">Start a New TBR Game<br>(If you would like to customize you
+            <br>must do so before starting a new game)
+        </a>
+        <a href="#" class="gamemode-box random-prompt-box" onclick="generateRandomPrompt()">
+            Quick Pick
+        </a>
+    </div>
+
+    <script>
+
+        const categories = [
+            { color: '#DCF4F0', text: 'COTTAGECORE', href: 'promptpages/cottagecore/cottagecore1.html' },
+            { color: '#DCF4F0', text: 'COTTAGECORE', href: 'promptpages/cottagecore/cottagecore2.html' },
+            { color: '#DCF4F0', text: 'COTTAGECORE', href: 'promptpages/cottagecore/cottagecore3.html' },
+            { color: '#DCF4F0', text: 'COTTAGECORE', href: 'promptpages/cottagecore/cottagecore4.html' },
+            { color: '#DCF4F0', text: 'COTTAGECORE', href: 'promptpages/cottagecore/cottagecore5.html' },
+            { color: '#FFCDCC', text: 'CHALLENGE YOURSELF', href: 'promptpages/challenge/challenge1.html' },
+            { color: '#FFCDCC', text: 'CHALLENGE YOURSELF', href: 'promptpages/challenge/challenge2.html' },
+            { color: '#FFCDCC', text: 'CHALLENGE YOURSELF', href: 'promptpages/challenge/challenge3.html' },
+            { color: '#FFCDCC', text: 'CHALLENGE YOURSELF', href: 'promptpages/challenge/challenge4.html' },
+            { color: '#FFCDCC', text: 'CHALLENGE YOURSELF', href: 'promptpages/challenge/challenge5.html' },
+            { color: '#EEEBE2', text: 'EASY', href: 'promptpages/easy/easy1.html' },
+            { color: '#EEEBE2', text: 'EASY', href: 'promptpages/easy/easy2.html' },
+            { color: '#EEEBE2', text: 'EASY', href: 'promptpages/easy/easy3.html' },
+            { color: '#EEEBE2', text: 'EASY', href: 'promptpages/easy/easy4.html' },
+            { color: '#EEEBE2', text: 'EASY', href: 'promptpages/easy/easy5.html' },
+            { color: '#C5ECDB', text: 'ACADEMIA', href: 'promptpages/academia/academia1.html' },
+            { color: '#C5ECDB', text: 'ACADEMIA', href: 'promptpages/academia/academia2.html' },
+            { color: '#C5ECDB', text: 'ACADEMIA', href: 'promptpages/academia/academia3.html' },
+            { color: '#C5ECDB', text: 'ACADEMIA', href: 'promptpages/academia/academia4.html' },
+            { color: '#C5ECDB', text: 'ACADEMIA', href: 'promptpages/academia/academia5.html' },
+            { color: '#ccffcd', text: 'FOOD', href: 'promptpages/food/food1.html' },
+            { color: '#ccffcd', text: 'FOOD', href: 'promptpages/food/food2.html' },
+            { color: '#ccffcd', text: 'FOOD', href: 'promptpages/food/food3.html' },
+            { color: '#ccffcd', text: 'FOOD', href: 'promptpages/food/food4.html' },
+            { color: '#ccffcd', text: 'FOOD', href: 'promptpages/food/food5.html' },
+            { color: '#f0dcf4', text: 'COLOR', href: 'promptpages/color/color1.html' },
+            { color: '#f0dcf4', text: 'COLOR', href: 'promptpages/color/color2.html' },
+            { color: '#f0dcf4', text: 'COLOR', href: 'promptpages/color/color3.html' },
+            { color: '#f0dcf4', text: 'COLOR', href: 'promptpages/color/color4.html' },
+            { color: '#f0dcf4', text: 'COLOR', href: 'promptpages/color/color5.html' },
+            { color: '#f4f0dc', text: 'EMOTIONAL', href: 'promptpages/emotional/emotional1.html' },
+            { color: '#f4f0dc', text: 'EMOTIONAL', href: 'promptpages/emotional/emotional2.html' },
+            { color: '#f4f0dc', text: 'EMOTIONAL', href: 'promptpages/emotional/emotional3.html' },
+            { color: '#f4f0dc', text: 'EMOTIONAL', href: 'promptpages/emotional/emotional4.html' },
+            { color: '#f4f0dc', text: 'EMOTIONAL', href: 'promptpages/emotional/emotional5.html' },
+            { color: '#80B9BC', text: 'DARK', href: 'promptpages/dark/dark1.html' },
+            { color: '#80B9BC', text: 'DARK', href: 'promptpages/dark/dark2.html' },
+            { color: '#80B9BC', text: 'DARK', href: 'promptpages/dark/dark3.html' },
+            { color: '#80B9BC', text: 'DARK', href: 'promptpages/dark/dark4.html' },
+            { color: '#80B9BC', text: 'DARK', href: 'promptpages/dark/dark5.html' },
+            { color: '#cdccff', text: 'RELAXING', href: 'promptpages/relaxing/relaxing1.html' },
+            { color: '#cdccff', text: 'RELAXING', href: 'promptpages/relaxing/relaxing2.html' },
+            { color: '#cdccff', text: 'RELAXING', href: 'promptpages/relaxing/relaxing3.html' },
+            { color: '#cdccff', text: 'RELAXING', href: 'promptpages/relaxing/relaxing4.html' },
+            { color: '#cdccff', text: 'RELAXING', href: 'promptpages/relaxing/relaxing5.html' },
+            { color: '#bc80b9', text: 'MYSTERIOUS', href: 'promptpages/mysterious/mysterious1.html' },
+            { color: '#bc80b9', text: 'MYSTERIOUS', href: 'promptpages/mysterious/mysterious2.html' },
+            { color: '#bc80b9', text: 'MYSTERIOUS', href: 'promptpages/mysterious/mysterious3.html' },
+            { color: '#bc80b9', text: 'MYSTERIOUS', href: 'promptpages/mysterious/mysterious4.html' },
+            { color: '#bc80b9', text: 'MYSTERIOUS', href: 'promptpages/mysterious/mysterious5.html' },
+            { color: '#b9bc80', text: 'NUMBERS', href: 'promptpages/numbers/numbers1.html' },
+            { color: '#b9bc80', text: 'NUMBERS', href: 'promptpages/numbers/numbers2.html' },
+            { color: '#b9bc80', text: 'NUMBERS', href: 'promptpages/numbers/numbers3.html' },
+            { color: '#b9bc80', text: 'NUMBERS', href: 'promptpages/numbers/numbers4.html' },
+            { color: '#b9bc80', text: 'NUMBERS', href: 'promptpages/numbers/numbers5.html' },
+            { color: '#ecdbc5', text: 'AROUND THE WORLD', href: 'promptpages/world/world1.html' },
+            { color: '#ecdbc5', text: 'AROUND THE WORLD', href: 'promptpages/world/world2.html' },
+            { color: '#ecdbc5', text: 'AROUND THE WORLD', href: 'promptpages/world/world3.html' },
+            { color: '#ecdbc5', text: 'AROUND THE WORLD', href: 'promptpages/world/world4.html' },
+            { color: '#ecdbc5', text: 'AROUND THE WORLD', href: 'promptpages/world/world5.html' },
+        ];
+
+        function getRandomCategory() {
+            const randomCategory = Math.floor((Math.random() * categories.length) + 1);
+            return categories[randomCategory];
+        }
+
+        function generateRandomPrompt() {
+            const promptBoxes = document.querySelectorAll('.random-prompt-box');
+            promptBoxes.forEach(promptBox => {
+                const randomCategory = getRandomCategory();
+                promptBox.href = randomCategory.href;
+                promptBox.textContent = "Quick Pick";
+            })
+        }
+        generateRandomPrompt();
+
+    </script>
+</body>
+<footer>CS3041: Human-Computer Interaction</footer>
+
+</html>
