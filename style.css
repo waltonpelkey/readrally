@@ -33,7 +33,7 @@ header::after {
 }
 
 nav {
-    padding-right: 10px;
+    padding-right: 1vh;
     float: right;
 }
 
@@ -43,25 +43,15 @@ nav ul {
     list-style: none;
 }
 
-nav li {
-    display: inline-block;
-    margin-left: 10px;
-    padding-top: 25px;
-    padding-bottom: 25px;
-}
 
-/*footer {
-    
-}*/
 .logo {
     margin: 0;
-    padding-top: 8px;
-    padding-bottom: 25px;
+    padding-top: .25vh;
     font-family: 'Bookerly Bold';
-    font-size: 50px;
+    font-size: 6vmin;
     color: white;
     position: absolute;
-    left: 20px;
+    left: 1vw;
     top: 0;
 }
 
@@ -72,11 +62,11 @@ nav li {
 .dropdown button {
     background-color: white;
     color: black;
-    padding: 10px 15px;
+    padding: 1vh 1vw;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
-    width: 200px;
+    border-radius: .5vh;
+    width: 11vw;
     text-align: left;
     font-family: 'Bookerly Bold';
     font-size: larger;
@@ -86,7 +76,7 @@ nav li {
     display: block;
     color: black;
     text-decoration: none;
-    padding: 10px 15px;
+    padding: 1vh 1vw;
     text-align: left;
     font-family: 'Bookerly Bold';
     font-size: larger;
@@ -96,10 +86,10 @@ nav li {
     display: none;
     position: absolute;
     background-color: white;
-    min-width: 100px;
-    box-shadow: 2px 2px 5px black;
-    border-radius: 5px;
-    width: 200px;
+    min-width: 10vw;
+    box-shadow: .5vh .5vh 1.5vh black;
+    border-radius: .5vh;
+    width: 11vw;
 }
 
 .dropdown:hover .content {
@@ -108,19 +98,19 @@ nav li {
 
 .dropdown:hover button {
     background-color: whitesmoke;
-    border-radius: 5px;
-    width: 200px;
+    border-radius: .5vh;
+    width: 11vw;
 }
 
 .dropdown a:hover {
     background-color: whitesmoke;
-    border-radius: 5px;
+    border-radius: .5vh;
 }
 
 body {
     background-color: #c9e5cd;
     margin: 0;
-    padding-top: 100px;
+    padding-top: 10vh;
     font-family: 'Bookerly Bold';
 }
 
@@ -132,58 +122,58 @@ body ul {
 
 body li {
     display: inline-block;
-    margin-left: 10px;
-    padding-top: 25px;
-    padding-bottom: 25px;
+    margin-left: 1vw;
+    padding-top: 2.5vh;
 }
 
 .game-board {
     display: grid;
-    grid-template-columns: 80px 80px 80px 80px 80px 80px 80px 80px 80px;
-    grid-template-rows: 80px 80px 80px 80px 80px 80px 80px 80px 80px;
+    grid-template-columns: 4.5vw 4.5vw 4.5vw 4.5vw 4.5vw 4.5vw 4.5vw 4.5vw 4.5vw;
+    grid-template-rows: 9vh 9vh 9vh 9vh 9vh 9vh 9vh 9vh 9vh;
     justify-content: center;
     align-content: center;
-    grid-gap: 2px;
-    margin-left: 475px;
+    grid-gap: .2vw;
+    margin-left: 30vw;
     position: absolute;
-    top: 120px;
+    top: 13vh;
     left: 0;
 }
 
 .game-board-7 {
     display: grid;
-    grid-template-columns: 100px 100px 100px 100px 100px 100px 100px;
-    grid-template-rows: 100px 100px 100px 100px 100px 100px 100px;
+    grid-template-columns: 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw;
+    grid-template-rows: 11vh 11vh 11vh 11vh 11vh 11vh 11vh;
     justify-content: center;
     align-content: center;
-    grid-gap: 2px;
-    margin-left: 475px;
+    grid-gap: .2vw;
+    margin-left: 30vw;
     position: absolute;
-    top: 120px;
+    top: 13vh;
     left: 0;
 }
 
 .game-board-5 {
     display: grid;
-    grid-template-columns: 144px 144px 144px 144px 144px;
-    grid-template-rows: 144px 144px 144px 144px 144px;
+    grid-template-columns: 9vw 9vw 9vw 9vw 9vw;
+    grid-template-rows: 16vh 16vh 16vh 16vh 16vh;
     justify-content: center;
     align-content: center;
-    grid-gap: 2px;
-    margin-left: 475px;
+    grid-gap: .2vw;
+    margin-left: 29vw;
     position: absolute;
-    top: 120px;
+    top: 13vh;
     left: 0;
 }
 
 .box {
     background-color: #d9d9d9;
-    border: 2px solid white;
+    border: .3vh solid white;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 1vh;
+    pointer-events: none;
 }
 
 .empty-box {
@@ -197,38 +187,38 @@ body li {
 
 .start-box {
     background-color: #caffbf;
-    border: 2px solid white;
+    border: .3vh solid white;
     color: rgb(0, 85, 0);
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 1vh;
 }
 
 .end-box {
     background-color: #ffc7ff;
-    border: 2px solid white;
+    border: .3vh solid white;
     color: #ad4fad;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 1vh;
+    box-shadow: none;
 }
 
 .rectangle {
-    width: 300px;
-    height: 50px;
-    line-height: 100px;
-    margin-left: 75px;
+    width: 17vw;
+    height: 5vh;
+    margin-left: 4vw;
     background-color: #d9d9d9;
-    border: 2px solid white;
+    border: .3vh solid white;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 1vh;
     margin-top: 0%;
     margin-bottom: 0%;
     text-decoration: none;
@@ -236,7 +226,6 @@ body li {
 }
 
 
-/* other stuff */
 .prompt-header {
     text-align: center;
     font-size: 300%;
@@ -258,16 +247,16 @@ body li {
 .recommendation-box {
     flex: 1;
     background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin: 20px;
+    border: .15vh solid #ccc;
+    padding: 1vh;
+    margin: 1.5vh;
     text-align: center;
-    max-width: 250px;
-    height: 375px;
+    max-width: 15vw;
+    height: 45vh;
 }
 
 .recommendation-box h2 {
-    font-size: 24px;
+    font-size: 3vmin;
     color: #333;
 }
 
@@ -288,13 +277,13 @@ footer {
     justify-content: center;
     align-items: center;
     background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin: 20px;
+    border: .15vh solid #ccc;
+    padding: 2vh;
+    margin: 2vh;
     text-align: center;
-    height: 650px;
+    height: 75vh;
     font-size: xx-large;
-    border-radius: 20px;
+    border-radius: 2vh;
     text-decoration: none;
     color: black;
 }
@@ -307,21 +296,28 @@ footer {
     left: 83vw;
 }
 
+.dice-container-one {
+    display: flex;
+    position: absolute;
+    top: 50vh;
+    left: 83vw;
+}
+
 .dice {
-    width: 80px;
-    height: 80px;
+    width: 4vw;
+    height: 4vw;
     position: relative;
-    margin: 5px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    margin: .5vh;
+    border-radius: 1vh;
+    box-shadow: 0 0 1vh rgba(0, 0, 0, 0.25);
     background-color: white;
 }
 
 .dice-dot {
     --top: 0% --left: 0%;
 
-    width: 15px;
-    height: 15px;
+    width: .75vw;
+    height: .75vw;
     background-color: black;
     border-radius: 50%;
 
@@ -333,15 +329,17 @@ footer {
 }
 
 .btn-roll-dice {
-    margin-top: 10px;
+    margin-top: 1vh;
     position: absolute;
     top: 60vh;
-    left: 83.75vw;
+    left: 85vw;
     font-family: 'Bookerly Bold';
+    width: 5vw;
+    height: 4vh;
 }
 
 h3 {
-    margin-top: 10px;
+    margin-top: 1vh;
     color: black;
     font-size: xx-large;
 }
@@ -349,25 +347,25 @@ h3 {
 table {
     width: 70%;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin-top: 2vh;
 }
 
 td {
-    padding: 10px;
+    padding: 1vh;
     border: transparent;
     font-size: x-large;
 }
 
 th {
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding-top: 1.2vh;
+    padding-bottom: 1.2vh;
     color: #333;
     border: transparent;
 }
 
 select {
     width: 100%;
-    padding: 10px;
+    padding: 1vh;
     box-sizing: border-box;
 }
 
@@ -377,30 +375,35 @@ select {
 }
 
 button.quitgame {
-    width: 200px;
-    height: 50px;
+    width: 10vw;
+    height: 5vh;
     background-color: white;
     color: black;
     font-family: 'Bookerly Bold';
     position: absolute;
-    right: 16px;
-    bottom: 50px;
+    right: 4vw;
+    bottom: 6vh;
     cursor: pointer;
 }
 
 button.back {
-    width: 200px;
-    height: 50px;
+    width: 10vw;
+    height: 5vh;
     background-color: white;
     color: black;
     font-family: 'Bookerly Bold';
     position: absolute;
-    left: 16px;
-    top: 100px;
+    left: 1.6vw;
+    top: 13vh;
     cursor: pointer;
     font-size: large;
 }
 
 button {
     cursor: pointer;
+}
+
+.glow {
+    box-shadow: 0 0 10px 5px #FFD700;
+    pointer-events: auto;
 }

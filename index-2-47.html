@@ -4,14 +4,12 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <script src="dice2.js" defer></script>
 </head>
 
 <body>
 
     <header>
         <nav>
-
             <ul>
                 <li>
                     <div class="logo"> &#128214;Read Rally&#128214;</div>
@@ -29,95 +27,95 @@
         </div>
     </header>
     <ul>
-        <li id="menu" >
+        <li id="menu">
             <div class="rectangle">
                 YOUR PROMPTS
             </div>
-            
+
         </li>
         <li>
             <div class="game-board">
-                <div class="end-box">FINISH</div>
-                <div class="box random-prompt-box" onclick="addtoList(event)"></div>
-                <div class="box random-prompt-box" onclick="addtoList(event)"></div>
-                <div class="box random-prompt-box" onclick="addtoList(event)"></div>
-                <div class="box random-prompt-box" onclick="addtoList(event)"></div>
-                <div class="box random-prompt-box" onclick="addtoList(event)"></div>
-                <div class="box random-prompt-box" onclick="addtoList(event)"></div>
-                <div class="box random-prompt-box" onclick="addtoList(event)"></div>
-                <div class="box random-prompt-box" onclick="addtoList(event)"></div>
-                <div class="empty-box"></div>
-                <div class="empty-box"></div>
-                <div class="empty-box"></div>
-                <div class="empty-box"></div>
-                <div class="empty-box"></div>
-                <div class="empty-box"></div>
-                <div class="empty-box"></div>
-                <div class="empty-box"></div>
-                <div class="box random-prompt-box" onclick="addtoList(event)"></div>
-                <div class="box random-prompt-box" onclick="addtoList(event)"></div>
-                <div class="box random-prompt-box" onclick="addtoList(event)"></div>
-                <div class="box random-prompt-box" onclick="addtoList(event)"></div>
-                <div class="box random-prompt-box" onclick="addtoList(event)"></div>
-                <div class="box random-prompt-box" onclick="addtoList(event)"></div>
-                <div class="box random-prompt-box" onclick="addtoList(event)"></div>
-                <div class="box random-prompt-box" onclick="addtoList(event)"></div>
-                <div class="box random-prompt-box" onclick="addtoList(event)"></div>
-                <div class="box random-prompt-box" onclick="addtoList(event)"></div>
-                <div class="box random-prompt-box" onclick="addtoList(event)"></div>
-                <div class="empty-box"></div>
-                <div class="empty-box"></div>
-                <div class="empty-box"></div>
-                <div class="empty-box"></div>
-                <div class="empty-box"></div>
-                <div class="empty-box"></div>
-                <div class="empty-box"></div>
-                <div class="empty-box"></div>
-                <div class="box random-prompt-box" onclick="addtoList(event)"></div>
-                <div class="box random-prompt-box" onclick="addtoList(event)"></div>
-                <div class="box random-prompt-box" onclick="addtoList(event)"></div>
-                <div class="box random-prompt-box" onclick="addtoList(event)"></div>
-                <div class="box random-prompt-box" onclick="addtoList(event)"></div>
-                <div class="box random-prompt-box" onclick="addtoList(event)"></div>
-                <div class="box random-prompt-box" onclick="addtoList(event)"></div>
-                <div class="box random-prompt-box" onclick="addtoList(event)"></div>
-                <div class="box random-prompt-box" onclick="addtoList(event)"></div>
-                <div class="empty-box"></div>
-                <div class="empty-box"></div>
-                <div class="empty-box"></div>
-                <div class="empty-box"></div>
-                <div class="empty-box"></div>
-                <div class="empty-box"></div>
-                <div class="empty-box"></div>
-                <div class="empty-box"></div>
-                <div class="box random-prompt-box" onclick="addtoList(event)"></div>
-                <div class="box random-prompt-box" onclick="addtoList(event)"></div>
-                <div class="box random-prompt-box" onclick="addtoList(event)"></div>
-                <div class="box random-prompt-box" onclick="addtoList(event)"></div>
-                <div class="box random-prompt-box" onclick="addtoList(event)"></div>
-                <div class="box random-prompt-box" onclick="addtoList(event)"></div>
-                <div class="box random-prompt-box" onclick="addtoList(event)"></div>
-                <div class="box random-prompt-box" onclick="addtoList(event)"></div>
-                <div class="box random-prompt-box" onclick="addtoList(event)"></div>
-                <div class="box random-prompt-box" onclick="addtoList(event)"></div>
-                <div class="box random-prompt-box" onclick="addtoList(event)"></div>
-                <div class="empty-box"></div>
-                <div class="empty-box"></div>
-                <div class="empty-box"></div>
-                <div class="empty-box"></div>
-                <div class="empty-box"></div>
-                <div class="empty-box"></div>
-                <div class="empty-box"></div>
-                <div class="empty-box"></div>
-                <div class="box random-prompt-box" onclick="addtoList(event)"></div>
-                <div class="box random-prompt-box" onclick="addtoList(event)"></div>
-                <div class="box random-prompt-box" onclick="addtoList(event)"></div>
-                <div class="box random-prompt-box" onclick="addtoList(event)"></div>
-                <div class="box random-prompt-box" onclick="addtoList(event)"></div>
-                <div class="box random-prompt-box" onclick="addtoList(event)"></div>
-                <div class="box random-prompt-box" onclick="addtoList(event)"></div>
-                <div class="box random-prompt-box" onclick="addtoList(event)"></div>
                 <div class="start-box">START</div>
+                <div data-position="1" class="box random-prompt-box" onclick="addtoList(event)"></div>
+                <div data-position="2" class="box random-prompt-box" onclick="addtoList(event)"></div>
+                <div data-position="3" class="box random-prompt-box" onclick="addtoList(event)"></div>
+                <div data-position="4" class="box random-prompt-box" onclick="addtoList(event)"></div>
+                <div data-position="5" class="box random-prompt-box" onclick="addtoList(event)"></div>
+                <div data-position="6" class="box random-prompt-box" onclick="addtoList(event)"></div>
+                <div data-position="7" class="box random-prompt-box" onclick="addtoList(event)"></div>
+                <div data-position="8" class="box random-prompt-box" onclick="addtoList(event)"></div>
+                <div class="empty-box"></div>
+                <div class="empty-box"></div>
+                <div class="empty-box"></div>
+                <div class="empty-box"></div>
+                <div class="empty-box"></div>
+                <div class="empty-box"></div>
+                <div class="empty-box"></div>
+                <div class="empty-box"></div>
+                <div data-position="9" class="box random-prompt-box" onclick="addtoList(event)"></div>
+                <div data-position="10" class="box random-prompt-box" onclick="addtoList(event)"></div>
+                <div data-position="11" class="box random-prompt-box" onclick="addtoList(event)"></div>
+                <div data-position="12" class="box random-prompt-box" onclick="addtoList(event)"></div>
+                <div data-position="13" class="box random-prompt-box" onclick="addtoList(event)"></div>
+                <div data-position="14" class="box random-prompt-box" onclick="addtoList(event)"></div>
+                <div data-position="15" class="box random-prompt-box" onclick="addtoList(event)"></div>
+                <div data-position="16" class="box random-prompt-box" onclick="addtoList(event)"></div>
+                <div data-position="17" class="box random-prompt-box" onclick="addtoList(event)"></div>
+                <div data-position="18" class="box random-prompt-box" onclick="addtoList(event)"></div>
+                <div data-position="19" class="box random-prompt-box" onclick="addtoList(event)"></div>
+                <div class="empty-box"></div>
+                <div class="empty-box"></div>
+                <div class="empty-box"></div>
+                <div class="empty-box"></div>
+                <div class="empty-box"></div>
+                <div class="empty-box"></div>
+                <div class="empty-box"></div>
+                <div class="empty-box"></div>
+                <div data-position="20" class="box random-prompt-box" onclick="addtoList(event)"></div>
+                <div data-position="21" class="box random-prompt-box" onclick="addtoList(event)"></div>
+                <div data-position="22" class="box random-prompt-box" onclick="addtoList(event)"></div>
+                <div data-position="23" class="box random-prompt-box" onclick="addtoList(event)"></div>
+                <div data-position="24" class="box random-prompt-box" onclick="addtoList(event)"></div>
+                <div data-position="25" class="box random-prompt-box" onclick="addtoList(event)"></div>
+                <div data-position="26" class="box random-prompt-box" onclick="addtoList(event)"></div>
+                <div data-position="27" class="box random-prompt-box" onclick="addtoList(event)"></div>
+                <div data-position="28" class="box random-prompt-box" onclick="addtoList(event)"></div>
+                <div class="empty-box"></div>
+                <div class="empty-box"></div>
+                <div class="empty-box"></div>
+                <div class="empty-box"></div>
+                <div class="empty-box"></div>
+                <div class="empty-box"></div>
+                <div class="empty-box"></div>
+                <div class="empty-box"></div>
+                <div data-position="29" class="box random-prompt-box" onclick="addtoList(event)"></div>
+                <div data-position="30" class="box random-prompt-box" onclick="addtoList(event)"></div>
+                <div data-position="31" class="box random-prompt-box" onclick="addtoList(event)"></div>
+                <div data-position="32" class="box random-prompt-box" onclick="addtoList(event)"></div>
+                <div data-position="33" class="box random-prompt-box" onclick="addtoList(event)"></div>
+                <div data-position="34" class="box random-prompt-box" onclick="addtoList(event)"></div>
+                <div data-position="35" class="box random-prompt-box" onclick="addtoList(event)"></div>
+                <div data-position="36" class="box random-prompt-box" onclick="addtoList(event)"></div>
+                <div data-position="37" class="box random-prompt-box" onclick="addtoList(event)"></div>
+                <div data-position="38" class="box random-prompt-box" onclick="addtoList(event)"></div>
+                <div data-position="39" class="box random-prompt-box" onclick="addtoList(event)"></div>
+                <div class="empty-box"></div>
+                <div class="empty-box"></div>
+                <div class="empty-box"></div>
+                <div class="empty-box"></div>
+                <div class="empty-box"></div>
+                <div class="empty-box"></div>
+                <div class="empty-box"></div>
+                <div class="empty-box"></div>
+                <div data-position="40" class="box random-prompt-box" onclick="addtoList(event)"></div>
+                <div data-position="41" class="box random-prompt-box" onclick="addtoList(event)"></div>
+                <div data-position="42" class="box random-prompt-box" onclick="addtoList(event)"></div>
+                <div data-position="43" class="box random-prompt-box" onclick="addtoList(event)"></div>
+                <div data-position="44" class="box random-prompt-box" onclick="addtoList(event)"></div>
+                <div data-position="45" class="box random-prompt-box" onclick="addtoList(event)"></div>
+                <div data-position="46" class="box random-prompt-box" onclick="addtoList(event)"></div>
+                <div data-position="47" class="box random-prompt-box" onclick="addtoList(event)"></div>
+                <div id='test' class="end-box">FINISH</div>
             </div>
         </li>
         <li>
@@ -128,9 +126,10 @@
     </ul>
 
     <button class="quitgame" onclick="location.href='startpage-2-47.html';">Quit Game</button>
-    
+
 
     <script>
+        var movementList = [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 17, 16, 15, 14, 13, 12, 11, 10, 9, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 37, 36, 35, 34, 33, 32, 31, 30, 29, 38, 39, 40, 41, 42, 43, 44, 45, 46];
 
         const categories = [
             { color: '#DCF4F0', text: 'COTTAGECORE', href: 'promptpages/cottagecore/cottagecore1.html' },
@@ -211,21 +210,132 @@
 
         function addtoList(event) {
             const p = document.createElement("a");
-            p.setAttribute("class","rectangle");
+            p.setAttribute("class", "rectangle");
             p.innerText = event.target.innerText;
-            for(obj of categories) {
-                if(p.innerText == obj.text) {
+            for (obj of categories) {
+                if (p.innerText == obj.text) {
                     p.style.backgroundColor = obj.color;
-                    p.setAttribute("href",obj.href);
+                    p.setAttribute("href", obj.href);
                 }
             }
             document.getElementById("menu").appendChild(p);
-            event.target.setAttribute("onclick","");
-            
+            event.target.setAttribute("onclick", "");
+
         }
         generateRandomPrompt();
+
+        function createDice(number, value) {
+            var dotPositionMatrix = {
+                1: [
+                    [50, 50]
+                ],
+                2: [
+                    [20, 20],
+                    [80, 80]
+                ],
+                3: [
+                    [20, 20],
+                    [50, 50],
+                    [80, 80]
+                ],
+                4: [
+                    [20, 20],
+                    [20, 80],
+                    [80, 20],
+                    [80, 80]
+                ],
+                5: [
+                    [20, 20],
+                    [20, 80],
+                    [50, 50],
+                    [80, 20],
+                    [80, 80]
+                ],
+                6: [
+                    [20, 20],
+                    [20, 80],
+                    [50, 20],
+                    [50, 80],
+                    [80, 20],
+                    [80, 80]
+                ]
+            }
+
+            var dice = document.createElement("div");
+            var valueText = document.createElement("div");
+
+            for (var dotPosition of dotPositionMatrix[number]) {
+                var dot = document.createElement("div");
+
+                dot.classList.add("dice-dot");
+                dot.style.setProperty("--top", dotPosition[0] + "%");
+                dot.style.setProperty("--left", dotPosition[1] + "%");
+                dice.appendChild(dot);
+            }
+
+            dice.classList.add("dice");
+
+            valueText.textContent = value;
+            valueText.style.opacity = "0";
+            valueText.classList.add("dice-value");
+            dice.appendChild(valueText);
+
+            return dice;
+        }
+
+        let currentPositionIndex = 0;
+        var currentPosition = -1;
+        var NUMBER_OF_DICE = 2;
+        var diceContainer = document.querySelector(".dice-container");
+        var btnRollDice = document = document.querySelector(".btn-roll-dice");
+
+        btnRollDice.addEventListener("click", () => {
+            randomizeDice(diceContainer, NUMBER_OF_DICE);
+        });
+
+
+        function randomizeDice(diceContainer, numberOfDice) {
+            diceContainer.innerHTML = "";
+            for (let i = 0; i < numberOfDice; i++) {
+                /* this is the value of the dice roll */
+                var random = Math.floor((Math.random() * 6) + 1);
+                var dice = createDice(random, random);
+
+                diceContainer.appendChild(dice);
+
+                currentPositionIndex += random;
+            }
+            if (movementList[currentPositionIndex] != undefined) {
+                var currentPositionOnBoard = movementList[currentPositionIndex];
+
+
+                var box = document.querySelectorAll('.box');
+
+                if (currentPositionOnBoard >= 0) {
+                    box[currentPositionOnBoard].classList.add('glow');
+                }
+            }
+            else {
+                endgame();
+            }
+        }
+
+        function endgame() {
+
+            var box = document.querySelector('.end-box');
+
+            box.classList.add('glow');
+
+
+            for (elm of document.getElementsByClassName("btn-roll-dice")) {
+                elm.setAttribute("hidden", "hidden");
+            }
+            diceContainer.children[0].setAttribute("hidden", "hidden");
+            diceContainer.children[1].setAttribute("hidden", "hidden");
+        }
     </script>
-    
+
 </body>
 <footer>CS3041: Human-Computer Interaction</footer>
+
 </html>

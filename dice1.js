@@ -1,5 +1,5 @@
-function createDice(number) {
-    const dotPositionMatrix ={
+function createDice(number, value) {
+    var dotPositionMatrix ={
         1: [
             [50, 50]
         ],
@@ -35,10 +35,11 @@ function createDice(number) {
         ]
     }
 
-    const dice = document.createElement("div");
+    var dice = document.createElement("div");
+    var valueText = document.createElement("div");
 
-    for (const dotPosition of dotPositionMatrix[number]) {
-        const dot = document.createElement("div");
+    for (var dotPosition of dotPositionMatrix[number]) {
+        var dot = document.createElement("div");
 
         dot.classList.add("dice-dot");
         dot.style.setProperty("--top", dotPosition[0] + "%");
@@ -48,33 +49,59 @@ function createDice(number) {
 
     dice.classList.add("dice");
 
+    valueText.textContent = value;
+    valueText.style.opacity = "1";
+    valueText.classList.add("dice-value");
+    dice.appendChild(valueText);
+
     return dice;
 }
 
+let currentPositionIndex = 0;
+var currentPosition = -1;
+var NUMBER_OF_DICE = 1;
+var diceContainer = document.querySelector(".dice-container");
+var btnRollDice = document = document.querySelector(".btn-roll-dice");
+
+btnRollDice.addEventListener("click", () => {
+    randomizeDice(diceContainer, NUMBER_OF_DICE);
+});
+
 function randomizeDice(diceContainer, numberOfDice) {
     diceContainer.innerHTML = "";
-
     for (let i = 0; i < numberOfDice; i++) {
         /* this is the value of the dice roll */
-        const random = Math.floor((Math.random() * 6) + 1);
-        const dice = createDice(random);
+        var random = Math.floor((Math.random() * 6) + 1);
+        var dice = createDice(random, random);
 
         diceContainer.appendChild(dice);
+
+        currentPositionIndex +=  random;
+    }
+    if (movementList[currentPositionIndex] != undefined) {
+        var currentPositionOnBoard = movementList[currentPositionIndex];
+    
+    
+        var box = document.querySelectorAll('.box');
+        
+        if (currentPositionOnBoard >= 0) {
+            box[currentPositionOnBoard].classList.add('glow');
+        }
+    }
+    else {
+        endgame();
     }
 }
 
+function endgame() {
+
+    var box = document.querySelector('.end-box');
+
+    box.classList.add('glow');
 
 
-const NUMBER_OF_DICE = 1;
-const diceContainer = document.querySelector(".dice-container");
-const btnRollDice = document = document.querySelector(".btn-roll-dice");
-
-randomizeDice(diceContainer, NUMBER_OF_DICE);
-
-btnRollDice.addEventListener("click", () => {
-    const interval = setInterval(() => {
-        randomizeDice(diceContainer, NUMBER_OF_DICE);
-    }, 50);
-
-    setTimeout(() => clearInterval(interval), 1000);
-});
+    for (elm of document.getElementsByClassName("btn-roll-dice")) {
+        elm.setAttribute("hidden","hidden");
+    }
+    diceContainer.children[0].setAttribute("hidden","hidden");
+}
