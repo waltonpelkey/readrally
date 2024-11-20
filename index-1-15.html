@@ -156,17 +156,37 @@
             const target = event.target.closest(".random-prompt-box");
             if (!target || target.hasAttribute("data-clicked")) return;
 
-            const p = document.createElement("a");
-            p.setAttribute("class", "rectangle");
-            p.innerText = target.innerText;
-            p.href = target.querySelector("a").href;
-            p.style.backgroundColor = target.style.backgroundColor;
+            // Extract the link and other attributes from the clicked box
+            const linkElement = target.querySelector("a");
+            const linkHref = linkElement.href;
+            const linkText = linkElement.innerText;
+            const backgroundColor = target.style.backgroundColor;
 
-            document.getElementById("menu").appendChild(p);
+            // Add the prompt to the menu if not already added
+            const menu = document.getElementById("menu");
+            if (![...menu.children].some((child) => child.innerText === linkText)) {
+                const p = document.createElement("a");
+                p.setAttribute("class", "rectangle");
+                p.innerText = linkText;
+                p.href = linkHref;
+                p.style.backgroundColor = backgroundColor;
 
+                menu.appendChild(p);
+            }
+
+            // Mark the box as clicked
             target.setAttribute("data-clicked", "true");
             target.style.pointerEvents = "none";
             target.style.opacity = "0.5";
+
+            // Check if the click event originated from the text link
+            if (event.target.tagName === "A") {
+                // Let the link handle navigation
+                return;
+            }
+
+            // Otherwise, simulate clicking the link programmatically
+            window.location.assign(linkHref);
         }
 
         generateRandomPrompt();
