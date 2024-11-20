@@ -210,7 +210,7 @@
 
         function addtoList(event) {
             const target = event.target.closest(".random-prompt-box");
-            if (!target || target.hasAttribute("data-clicked")) return;
+            if (!target) return;
 
             // Extract the link and other attributes from the clicked box
             const linkElement = target.querySelector("a");
@@ -218,32 +218,37 @@
             const linkText = linkElement.innerText;
             const backgroundColor = target.style.backgroundColor;
 
-            // Add the prompt to the menu if not already added
+            // Add the prompt to the menu if not already added by this box
             const menu = document.getElementById("menu");
-            if (![...menu.children].some((child) => child.innerText === linkText)) {
-                const p = document.createElement("a");
-                p.setAttribute("class", "rectangle");
-                p.innerText = linkText;
-                p.href = linkHref;
-                p.style.backgroundColor = backgroundColor;
+            const existingItems = [...menu.children].filter((child) => child.classList.contains("rectangle"));
 
-                menu.appendChild(p);
+            // Check if the clicked box already added this item
+            if (target.hasAttribute("data-clicked")) {
+                console.log("Prompt already added from this box");
+                return;
             }
 
-            // Mark the box as clicked
+            // Add the prompt to the menu
+            const p = document.createElement("a");
+            p.setAttribute("class", "rectangle");
+            p.innerText = linkText;
+            p.href = linkHref;
+            p.style.backgroundColor = backgroundColor;
+
+            menu.appendChild(p);
+
+            // Mark the box as clicked to prevent adding the same prompt from this box
             target.setAttribute("data-clicked", "true");
             target.style.pointerEvents = "none";
             target.style.opacity = "0.5";
 
-            // Check if the click event originated from the text link
-            if (event.target.tagName === "A") {
-                // Let the link handle navigation
-                return;
+            // Navigate to the prompt page if the box was clicked
+            if (event.target.tagName !== "A") {
+                window.location.assign(linkHref);
             }
-
-            // Otherwise, simulate clicking the link programmatically
-            window.location.assign(linkHref);
         }
+
+
 
         generateRandomPrompt();
 
