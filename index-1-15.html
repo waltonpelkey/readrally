@@ -153,19 +153,22 @@
         }
 
         function addtoList(event) {
+            const target = event.target.closest(".random-prompt-box");
+            if (!target || target.hasAttribute("data-clicked")) return;
+
             const p = document.createElement("a");
             p.setAttribute("class", "rectangle");
-            p.innerText = event.target.innerText;
-            for (obj of categories) {
-                if (p.innerText == obj.text) {
-                    p.style.backgroundColor = obj.color;
-                    p.setAttribute("href", obj.href);
-                }
-            }
-            document.getElementById("menu").appendChild(p);
-            event.target.setAttribute("onclick", "");
+            p.innerText = target.innerText;
+            p.href = target.querySelector("a").href;
+            p.style.backgroundColor = target.style.backgroundColor;
 
+            document.getElementById("menu").appendChild(p);
+
+            target.setAttribute("data-clicked", "true");
+            target.style.pointerEvents = "none";
+            target.style.opacity = "0.5";
         }
+
         generateRandomPrompt();
 
         function createDice(number, value) {
